@@ -20,3 +20,5 @@ background:
 http://www.wallpapervortex.com/digital_art-pixelated-wallpapers.html#.Vw_vrhbMzdk
 font:
 http://www.fontspace.com/jackster-productions/pokemon-gb
+Pokemon Sprites:
+http://www.spriters-resource.com/ds/pokemonheartgoldsoulsilver/sheet/26794/
