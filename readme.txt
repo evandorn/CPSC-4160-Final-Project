@@ -1,4 +1,18 @@
- 
+Names:   			Evan Dorn, Chris Cornejo, Ryan Adventuranza 
+Clemson Email Addresses:	dorn3@g.clemson.edu
+
+Project no:			5
+Project due date:		4/19/16
+
+Project description:	A side scrolling game developed in C++ and Cocos2dx.
+
+Contributions: 
+
+Evan - 
+
+Chris - 
+
+Ryan -
 
 
 resource sources:
