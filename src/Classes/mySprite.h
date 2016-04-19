@@ -16,6 +16,7 @@ public:
 
 private:
   int spriteWidth;
+  int spriteHeight;
 
 protected:
   cocos2d::Size viewSize;

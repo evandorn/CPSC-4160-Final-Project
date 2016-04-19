@@ -3,6 +3,7 @@
 #include "PokemonSprite.h"
 #include "TrainerSprite.h"
 #include <time.h>
+#include <SimpleAudioEngine.h>
 
 
 Project4::~Project4() {
@@ -79,7 +80,11 @@ bool Project4::init() {
   if ( !Layer::init() ) {
     return false;
   }
+   
+CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sounds/theme_music.mp3", true);
     
+
+
   cocos2d::Size visibleSize = 
     cocos2d::Director::getInstance()->getVisibleSize();
   cocos2d::Vec2 origin = 
