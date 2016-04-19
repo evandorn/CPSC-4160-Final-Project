@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>pokeball.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{21,25}</string>
+                <key>spriteSourceSize</key>
+                <string>{21,25}</string>
+                <key>textureRect</key>
+                <string>{{0,0},{21,25}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>pokeball.png</string>
+            <key>size</key>
+            <string>{21,25}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:2f85d976a24ae266f7ff979133f25b55:5d438e70f9c330bef4e3818bcd9fc25d:3173e755650cc48830d5311d1f5e5dc1$</string>
+            <key>textureFileName</key>
+            <string>pokeball.png</string>
+        </dict>
+    </dict>
+</plist>

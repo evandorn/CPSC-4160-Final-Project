@@ -6,6 +6,10 @@ Project due date:		4/19/16
 
 Project description:	A side scrolling game developed in C++ and Cocos2dx.
 
+To fire pokeballs press the spacebar button.
+
+
+
 Contributions: 
 
 Evan - 
