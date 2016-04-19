@@ -6,18 +6,16 @@ Project due date:		4/19/16
 
 Project description:	A side scrolling game developed in C++ and Cocos2dx.
 
-To fire pokeballs press the spacebar button.
-
+To move, press the arrow keys. To fire pokeballs press the spacebar button.
 
 
 Contributions: 
 
-Evan - 
+Evan - Shooting, sprite sheets, music
 
-Chris - 
+Chris - Parallax scrolling
 
-Ryan -
-
+Ryan - Keyboard controls
 
 resource sources:
 background:
