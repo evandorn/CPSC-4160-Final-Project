@@ -4,48 +4,33 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>trainer.png</key>
+            <key>noctowl.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{35,42}</string>
+                <string>{64,65}</string>
                 <key>spriteSourceSize</key>
-                <string>{35,42}</string>
+                <string>{64,65}</string>
                 <key>textureRect</key>
-                <string>{{0,0},{35,42}}</string>
+                <string>{{0,0},{64,65}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>trainer1.png</key>
+            <key>noctowl2.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{35,39}</string>
+                <string>{64,69}</string>
                 <key>spriteSourceSize</key>
-                <string>{35,39}</string>
+                <string>{64,69}</string>
                 <key>textureRect</key>
-                <string>{{35,0},{35,39}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>trainer2.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{35,39}</string>
-                <key>spriteSourceSize</key>
-                <string>{35,39}</string>
-                <key>textureRect</key>
-                <string>{{70,0},{35,39}}</string>
+                <string>{{0,65},{64,69}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -59,13 +44,13 @@
             <key>premultiplyAlpha</key>
             <false/>
             <key>realTextureFileName</key>
-            <string>trainer.png</string>
+            <string>noctowl.png</string>
             <key>size</key>
-            <string>{105,42}</string>
+            <string>{64,134}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2391a767e79d71c21103fa4e7a55e1d4:cbfe24f33e59f2ac7d436565775515b7:f62c44879277bc00e7381176c0e971e1$</string>
+            <string>$TexturePacker:SmartUpdate:59d6e90f52a5477d8cad0951252f4afd:dc247bc24f30e5a1f909d0c64e4ae860:cf6948db41060541a913d14b6c7a9367$</string>
             <key>textureFileName</key>
-            <string>trainer.png</string>
+            <string>noctowl.png</string>
         </dict>
     </dict>
 </plist>
