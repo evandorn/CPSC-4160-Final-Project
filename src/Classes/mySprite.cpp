@@ -49,10 +49,10 @@ void MySprite::update(float dt) {
     if ( location.x < 0) {                                 // limits the sprite from going too far left
         getSprite()->setPosition(position.x, position.y);
     }
-    if ( location.y > getViewSize().height - 220) {             // limits the sprite from going too far up
+    if ( location.y > getViewSize().height - 600) {             // limits the sprite from going too far up
         getSprite()->setPosition(position.x, position.y);
     }
-    if ( location.y < 320 ) {                                // limits the sprite from going too far down
+    if ( location.y < 0 ) {                                // limits the sprite from going too far down
         getSprite()->setPosition(position.x, position.y);
     }
 }

@@ -4,16 +4,16 @@ Clemson Email Addresses:	dorn3@g.clemson.edu
 Project no:			5
 Project due date:		4/19/16
 
-Project description:	A side scrolling game developed in C++ and Cocos2dx.
+Project description:	A side scrolling pokemon game developed in C++ and Cocos2dx.
+	Painters algorithm is utilized with small moving clouds in the background and two different sized set of trees in conjunction with parallax scrolling.
 
 To move, press the arrow keys. To fire pokeballs press the spacebar button.
 
-
 Contributions: 
 
-Evan - Shooting, sprite sheets, music
+Evan - Shooting, sprite sheets, music, Merged program code, Established Git Repo, wrote readme
 
-Chris - Parallax scrolling
+Chris - Parallax scrolling, And parallax scrolling images, painters algorithm images and backgrounground code.
 
 Ryan - Keyboard controls
 
