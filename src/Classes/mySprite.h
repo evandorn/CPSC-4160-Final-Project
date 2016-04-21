@@ -8,7 +8,7 @@ class MySprite {
 public:
   MySprite(const std::string&, int, cocos2d::Point);
   virtual ~MySprite() {}
-  void update(float);
+  virtual void update(float);
   cocos2d::Point getOrigin()  const { return origin; }
   cocos2d::Size getViewSize() const { return viewSize; }
   virtual cocos2d::Sprite* getSprite() const { return sprite; }

@@ -16,7 +16,7 @@ public:
     SmartPokemon(const std::string& name, int noFrames, cocos2d::Point pos, const MySprite* e);
     void update(float);
 private:
-    const MySprite * enemy;
+    const MySprite *enemy;
     bool evade;
     float maxDist;
 };

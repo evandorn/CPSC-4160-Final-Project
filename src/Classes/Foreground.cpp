@@ -30,4 +30,3 @@ void Foreground::menuCloseCallback(Ref* pSender) {
   exit(0);
   #endif
 }
-

@@ -13,6 +13,8 @@ private:
     cocos2d::Sprite* trees2;
     cocos2d::Sprite* clouds1;
     cocos2d::Sprite* clouds2;
+    cocos2d::Sprite* treespainters1;
+    cocos2d::Sprite* treespainters2;
 
   int scrollSpeed = 1;
 public:

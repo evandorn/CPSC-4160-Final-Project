@@ -19,5 +19,4 @@ private:
     std::list<MySprite*> sprites;
     Foreground*   foreground;
     Background*   background;
-    
 };

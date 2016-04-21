@@ -56,8 +56,7 @@ void Project5::generatePokemon() {
     new TrainerSprite("bike", 3, cocos2d::Point(100,170));
     sprites.push_back(trainerSprite);
     addChild(trainerSprite->getSprite(),0);
-    
-    
+
     // Case 1
     arcanineSprite =
     new PokemonSprite("arcanine", 2, cocos2d::Point(1024, 50));
@@ -70,7 +69,7 @@ void Project5::generatePokemon() {
     
    //NEW SMART POKEMON
     articunoSprite =
-    new SmartPokemon("articuno", 2, cocos2d::Point(1024, 150), trainerSprite );
+    new SmartPokemon("articuno", 2, cocos2d::Point(1024, 150), trainerSprite);
     sprites.push_back(articunoSprite);
     addChild(articunoSprite->getSprite(),0);
 
@@ -78,8 +77,7 @@ void Project5::generatePokemon() {
     new PokemonSprite("dragonite", 2, cocos2d::Point(1075, 50));
     sprites.push_back(dragoniteSprite);
     addChild(dragoniteSprite->getSprite());
-    
-  
+
 }
 
 
