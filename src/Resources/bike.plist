@@ -4,18 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>bike.png</key>
+            <key>bike1.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{45,50}</string>
+                <string>{40,46}</string>
                 <key>spriteSourceSize</key>
-                <string>{45,50}</string>
+                <string>{40,46}</string>
                 <key>textureRect</key>
-                <string>{{0,0},{45,50}}</string>
+                <string>{{0,0},{40,46}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -26,11 +26,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{45,50}</string>
+                <string>{40,43}</string>
                 <key>spriteSourceSize</key>
-                <string>{45,50}</string>
+                <string>{40,43}</string>
                 <key>textureRect</key>
-                <string>{{45,0},{45,50}}</string>
+                <string>{{40,0},{40,43}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -41,11 +41,11 @@
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{45,50}</string>
+                <string>{40,46}</string>
                 <key>spriteSourceSize</key>
-                <string>{45,50}</string>
+                <string>{40,46}</string>
                 <key>textureRect</key>
-                <string>{{90,0},{45,50}}</string>
+                <string>{{80,0},{40,46}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -61,9 +61,9 @@
             <key>realTextureFileName</key>
             <string>bike.png</string>
             <key>size</key>
-            <string>{135,50}</string>
+            <string>{120,46}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:bd08da50e75fa4591a5f864350d16801:bcdf73efc9c30155fa29a543c3f9779e:9435881e9ab0fd939936451f785a7a8a$</string>
+            <string>$TexturePacker:SmartUpdate:0526744e5cae63a11ca40590c144ad8e:7f656fa3758f84a1f9600d001a2b48b7:9435881e9ab0fd939936451f785a7a8a$</string>
             <key>textureFileName</key>
             <string>bike.png</string>
         </dict>

@@ -4,33 +4,18 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>noctowl.png</key>
+            <key>pokeball.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{60,61}</string>
+                <string>{21,25}</string>
                 <key>spriteSourceSize</key>
-                <string>{60,61}</string>
+                <string>{21,25}</string>
                 <key>textureRect</key>
-                <string>{{0,0},{60,61}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>noctowl2.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{60,79}</string>
-                <key>spriteSourceSize</key>
-                <string>{60,79}</string>
-                <key>textureRect</key>
-                <string>{{0,61},{60,79}}</string>
+                <string>{{0,0},{21,25}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -44,13 +29,13 @@
             <key>premultiplyAlpha</key>
             <false/>
             <key>realTextureFileName</key>
-            <string>noctowl.png</string>
+            <string>pokeball.png</string>
             <key>size</key>
-            <string>{60,140}</string>
+            <string>{21,25}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2a3d48efc87502ea5f02fb56c13a75b5:3aec06437e5ef29688725767923f8983:cf6948db41060541a913d14b6c7a9367$</string>
+            <string>$TexturePacker:SmartUpdate:2f85d976a24ae266f7ff979133f25b55:5d438e70f9c330bef4e3818bcd9fc25d:3173e755650cc48830d5311d1f5e5dc1$</string>
             <key>textureFileName</key>
-            <string>noctowl.png</string>
+            <string>pokeball.png</string>
         </dict>
     </dict>
 </plist>

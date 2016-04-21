@@ -22,6 +22,7 @@ spriteHeight(0)
     
     sprite = cocos2d::Sprite::createWithSpriteFrame(frames.front());
     
+    // Lower left corner is origin; put Alien at far right, center:
     sprite->setPosition(pos);
     
     cocos2d::Animation*

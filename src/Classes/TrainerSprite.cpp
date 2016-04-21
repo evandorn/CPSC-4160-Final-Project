@@ -70,7 +70,6 @@ cocos2d::EventListenerKeyboard* l = cocos2d::EventListenerKeyboard::create();
 }
 
 void TrainerSprite::update(float dt) {
-
   if(!moveLeft && !moveRight) { // this all isn't working, not getting called D:
     velocity.set(0, 0); //something velocity, this isnt saving up in base class
   }
@@ -85,8 +84,7 @@ void TrainerSprite::update(float dt) {
   }
   if(moveUp && !moveDown) {
     velocity.set(velocity.x, abs(saveVelocity.y));
-  } 
-
+  }
   MySprite::update(dt);
 
 }
