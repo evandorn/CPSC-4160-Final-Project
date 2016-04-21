@@ -35,6 +35,9 @@ cocos2d::EventListenerKeyboard* l = cocos2d::EventListenerKeyboard::create();
 	    case cocos2d::EventKeyboard::KeyCode::KEY_W:
 	      moveUp = true;
 	      break;
+       case cocos2d::EventKeyboard::KeyCode::KEY_SPACE:
+            
+            std::cout << "spacebar!";
 	    default:
 	      break;
     }

@@ -57,6 +57,10 @@ void MySprite::update(float dt) {
     }
 }
 
+void MySprite::setVelocity(cocos2d::Vec2 vel) {
+    velocity = vel;
+}
+
 // Function getFrames marshals the sprite frames into a cocos
 // vector using the format string passed to the function.
 cocos2d::Vector<cocos2d::SpriteFrame*>
