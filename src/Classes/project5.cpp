@@ -45,11 +45,25 @@ bool Project5::init() {
 }
 
 void Project5::generatePokemon() {
- 
+    
+    
+    srand(time(NULL));
+    int randNumx = rand()%(1500-100 + 1) + 100;
+    int randNumx2 = rand()%(1500-100 + 1) + 100;
+    int randNumx3 = rand()%(1500-100 + 1) + 100;
+    
+    int randNumy = rand()%(150-50 + 1) + 50;
+    int randNumy2 = rand()%(150-50 + 1) + 50;
+    int randNumy3 = rand()%(150-50 + 1) + 50;
+    
+    
+
+  
     MySprite *arcanineSprite;
     MySprite *moltresSprite;
     MySprite *articunoSprite;
     MySprite *dragoniteSprite;
+
    // MySprite *articunoSmart;
     
     MySprite *trainerSprite =
@@ -59,11 +73,11 @@ void Project5::generatePokemon() {
 
     // Case 1
     arcanineSprite =
-    new PokemonSprite("arcanine", 2, cocos2d::Point(1024, 50));
+    new PokemonSprite("arcanine", 2, cocos2d::Point(randNumx2, randNumy2));
     sprites.push_back(arcanineSprite);
     addChild(arcanineSprite->getSprite());
     moltresSprite =
-    new PokemonSprite("moltres", 2, cocos2d::Point(1024, 100));
+    new PokemonSprite("moltres", 2, cocos2d::Point(randNumx3, randNumy3));
     sprites.push_back(moltresSprite);
     addChild(moltresSprite->getSprite());
     
@@ -74,9 +88,10 @@ void Project5::generatePokemon() {
     addChild(articunoSprite->getSprite(),0);
 
     dragoniteSprite =
-    new PokemonSprite("dragonite", 2, cocos2d::Point(1075, 50));
+    new PokemonSprite("dragonite", 2, cocos2d::Point(randNumx, randNumy));
     sprites.push_back(dragoniteSprite);
     addChild(dragoniteSprite->getSprite());
+
 
 }
 
