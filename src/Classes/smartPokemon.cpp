@@ -12,7 +12,7 @@
 #include <cmath>
 
 SmartPokemon::SmartPokemon(const std::string& filename, int noFrames,
-                     cocos2d::Point pos, const MySprite* e) :
+                     cocos2d::Point pos, const MySprite* e) : // e is enemy
 PokemonSprite(filename, noFrames, pos),
 enemy(e),
 evade(false),
@@ -22,28 +22,38 @@ maxDist(150)
 void SmartPokemon::update(float dt) {
     cocos2d::Vec2 position = sprite->getPosition();
     cocos2d::Vec2 incr = velocity * dt;
-    
-    // sprite->setPosition(position.x + incr.x, position.y + incr.y);
+    static bool switcher = false;
+    static int bounds = 0;  //prevents evade from getting called multiple times
     
     cocos2d::Point location = getSprite()->getPosition();
     cocos2d::Point enemyLoc = enemy->getSprite()->getPosition();
 
-    evade = ((enemyLoc.x-location.x)*(enemyLoc.x-location.x) +
-             (enemyLoc.y-location.y)*(enemyLoc.y-location.y)) < maxDist*maxDist;
-    
-    if(evade) {
-        if((location.x > enemyLoc.x && velocity.x < 0) ||
-           (location.x < enemyLoc.x && velocity.x > 0) ) {
-            setVelocity(velocity*-1);
-            sprite->setScaleX(sprite->getScaleX() * -1);
-            // sprite->setPosition(velocity.x, position.y);
-            // sprite = setVelocity(velocity*-1);
-            sprite->setPosition(velocity.x * -1, position.y);
+    evade = (((enemyLoc.x-location.x)*(enemyLoc.x-location.x) +
+             (enemyLoc.y-location.y)*(enemyLoc.y-location.y)) < (maxDist*maxDist));
+
+   if(evade && bounds == 0) { //force this to be called only once
+        if (switcher == true) {
+           switcher = false;  
         }
-        if((location.y > enemyLoc.y && velocity.y < 0) ||
-           (location.y < enemyLoc.y && velocity.y > 0) )
-            velocity.y = -1*velocity.y;
+        else {
+        switcher = true;
+        }
+
+        sprite->setScaleX(sprite->getScaleX() * -1); // only setting for one smartpokemon sprite
+        bounds = bounds + 150;
     }
-    
-    PokemonSprite::update(dt);
+
+   if (!switcher) {
+      PokemonSprite::update(dt); // goes to the left
+        if (bounds > 0)
+           bounds--;
+   }
+
+   if (switcher) {
+      PokemonSprite::update(-dt); //makes it go right
+        if (bounds > 0)
+           bounds--;
+   }
+
+
 }

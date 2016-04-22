@@ -61,6 +61,7 @@ void MySprite::setVelocity(cocos2d::Vec2 vel) {
     velocity = vel;
 }
 
+
 bool MySprite::collidedRect(const MySprite* otherSprite) const {
     int myWidth = sprite->getContentSize().width;
     int myHeight = sprite->getContentSize().height;
@@ -86,7 +87,6 @@ bool MySprite::collidedWith(const MySprite* otherSprite) const {
     sprite->getContentSize().width/2;
     return distance < radii;
 }
-
 
 // Function getFrames marshals the sprite frames into a cocos
 // vector using the format string passed to the function.

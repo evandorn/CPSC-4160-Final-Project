@@ -11,9 +11,11 @@ public:
     ~Project5();
   void update(float dt);
   static cocos2d::Scene* createScene();
+  void menuCloseCallback(Ref* pSender);
   virtual bool init();
   void generatePokemon();
-    void menuCloseCallback(cocos2d::Ref* pSender);
+  void drawPokeball();
+
   CREATE_FUNC(Project5);
 private:
     std::list<MySprite*> sprites;
@@ -26,4 +28,11 @@ private:
     cocos2d::MenuItem* closeItem;
     cocos2d::Menu*     menu;
     cocos2d::Label*    label;
+    MySprite *arcanineSprite;
+    MySprite *moltresSprite;
+    MySprite *articunoSprite;
+    MySprite *dragoniteSprite;
+    MySprite *trainerSprite;
+    MySprite *pokeball;
+    bool pokeballThrow = false;
 };

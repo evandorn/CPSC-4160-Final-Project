@@ -20,7 +20,7 @@ PokemonSprite(const std::string& name, int noFrames, cocos2d::Point pos);
 virtual ~PokemonSprite() { }
 static int getNumberOfPokemon();
 void update(float dt);
-    
+ 
 };
 
 #endif /* PokemonSprite_h */

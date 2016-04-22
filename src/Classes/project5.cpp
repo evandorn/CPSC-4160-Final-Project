@@ -6,6 +6,7 @@
 #include "TrainerSprite.h"
 #include "Project5.h"
 #include "smartPokemon.h"
+#include "PokeballSprite.h"
 
 Project5::~Project5() {
     std::list<MySprite*>::iterator ptr = sprites.begin();
@@ -32,16 +33,10 @@ bool Project5::init() {
 
   addChild(background   = Background::create(),  -1);
     
-  //CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sounds/theme_music.mp3", true);
+  CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("sounds/theme_music.mp3", true);
     
-//    MySprite *trainerSprite =
-//    new TrainerSprite("bike", 3, cocos2d::Point(100,170));
-//    sprites.push_back(trainerSprite);
-//    addChild(trainerSprite->getSprite());    
-    
-    
-    closeItem = cocos2d::MenuItemImage::create("Resources/CloseNormal.png",
-                                               "Resources/CloseSelected.png",
+    closeItem = cocos2d::MenuItemImage::create("CloseNormal.png",
+                                               "CloseSelected.png",
                                                CC_CALLBACK_1(Project5::menuCloseCallback, this));
     closeItem->setPosition(visibleSize.width - closeItem->getContentSize().width/2, closeItem->getContentSize().height/2);
     
@@ -61,38 +56,63 @@ bool Project5::init() {
 #pragma - collideLabel for debugging.
     
     /*
-    collideLabel =
-    cocos2d::Label::createWithTTF("Collision", "fonts/Marker Felt.ttf",24);
-    collideLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width/4,
-                                            origin.y + visibleSize.height - label->getContentSize().height-20));
-    collideLabel->retain();
-    */
+     collideLabel =
+     cocos2d::Label::createWithTTF("Collision", "fonts/Marker Felt.ttf",24);
+     collideLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width/4,
+     origin.y + visibleSize.height - label->getContentSize().height-20));
+     collideLabel->retain();
+     */
     
     scoreLabel =
     cocos2d::Label::createWithTTF("Score: ", "fonts/Pokemon GB.ttf",24);
     scoreLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width/8,
                                           origin.y + visibleSize.height - label->getContentSize().height-50));
     addChild(scoreLabel,1);
-
+    
     
     countLabel =
     cocos2d::Label::createWithTTF("0", "fonts/Pokemon GB.ttf",24);
     countLabel->setPosition(cocos2d::Vec2(origin.x + visibleSize.width/4,
                                           origin.y + visibleSize.height - label->getContentSize().height-50));
     addChild(countLabel,1);
+    
+    generatePokemon();
+    scheduleUpdate();
 
+    cocos2d::EventListenerKeyboard* elisten =
+    cocos2d::EventListenerKeyboard::create();
+    elisten->onKeyPressed =
+    [this](cocos2d::EventKeyboard::KeyCode keyCode,cocos2d::Event* event) {
+        switch(keyCode) {
+            case cocos2d::EventKeyboard::KeyCode::KEY_SPACE:
+                CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("pokeball.mp3");
+                pokeballThrow = true;
+                drawPokeball();
+                break;
+            default:
+                break;
+        }
+    };
     
+    elisten->onKeyReleased =
+    [this](cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event){
+        switch(keyCode) {
+            case cocos2d::EventKeyboard::KeyCode::KEY_SPACE:
+                pokeballThrow = false;
+                break;
+            default:
+                break;
+        }
+    };
     
-  generatePokemon();
-  scheduleUpdate();
+    cocos2d::Director::getInstance()->getEventDispatcher()->
+    addEventListenerWithFixedPriority(elisten, 1);
 
   return true;
 }
 
 void Project5::generatePokemon() {
     
-    
-    srand(time(NULL));
     int randNumx = rand()%(1500-100 + 1) + 100;
     int randNumx2 = rand()%(1500-100 + 1) + 100;
     int randNumx3 = rand()%(1500-100 + 1) + 100;
@@ -101,21 +121,14 @@ void Project5::generatePokemon() {
     int randNumy2 = rand()%(150-50 + 1) + 50;
     int randNumy3 = rand()%(150-50 + 1) + 50;
     
-    
-
-  
-    MySprite *arcanineSprite;
-    MySprite *moltresSprite;
-    MySprite *articunoSprite;
-    MySprite *dragoniteSprite;
-
    // MySprite *articunoSmart;
     
-    MySprite *trainerSprite =
+    
+    trainerSprite =
     new TrainerSprite("bike", 3, cocos2d::Point(100,170));
     sprites.push_back(trainerSprite);
     addChild(trainerSprite->getSprite(),0);
-
+    
     // Case 1
     arcanineSprite =
     new PokemonSprite("arcanine", 2, cocos2d::Point(randNumx2, randNumy2));
@@ -126,53 +139,64 @@ void Project5::generatePokemon() {
     sprites.push_back(moltresSprite);
     addChild(moltresSprite->getSprite());
     
-   //NEW SMART POKEMON
+    //NEW SMART POKEMON
     articunoSprite =
     new SmartPokemon("articuno", 2, cocos2d::Point(1024, 150), trainerSprite);
     sprites.push_back(articunoSprite);
     addChild(articunoSprite->getSprite(),0);
-
+    
     dragoniteSprite =
     new PokemonSprite("dragonite", 2, cocos2d::Point(randNumx, randNumy));
     sprites.push_back(dragoniteSprite);
     addChild(dragoniteSprite->getSprite());
-
-
+    
 }
 
 
-void Project5::update(float dt) {
+void Project5::drawPokeball() {
+    
+    // Draw pokeball 20 pixels away from trainer
+    pokeball = new PokeballSprite("dragonite", 2, cocos2d::Point(trainerSprite->getSprite()->getPosition().x+20, trainerSprite->getSprite()->getPosition().y+0));
+    sprites.push_back(pokeball);
+    addChild(pokeball->getSprite());
+}
 
+void Project5::update(float dt) {
+    
     bool collision = false;
     
-  background->update(dt);
-
+    background->update(dt);
+    
     std::list<MySprite*>::iterator trainerSprite = sprites.begin();
     std::list<MySprite*>::iterator ptr = sprites.begin();
+    std::list<MySprite*>::iterator pokeball = sprites.begin();
+    
     ++ptr;
+    
     static_cast<TrainerSprite*>(*trainerSprite)->update(dt);
-    while ( ptr != sprites.end() ) {
+    while (ptr != sprites.end()) {
         static_cast<PokemonSprite*>(*ptr)->update(dt);
+        // static_cast<PokeballSprite*>(*pokeball)->update(dt);
         // Adding collisions
-        if ( (*trainerSprite)->collidedRect(*ptr) ) {
+        if ((*pokeball)->collidedRect(*ptr)) {
             std::cout << "Collision!";
             collision = true;
             collideCount += 1;
             std::stringstream strm;
             strm << collideCount;
             countLabel->setString(strm.str());
-    }
+        }
         ++ptr;
-  }
-
-        if ( collision && !labelDrawn ) {
-            //addChild(collideLabel);
-            labelDrawn = true;
-        }
-        else if ( !collision && labelDrawn ) {
-            // removeChild(collideLabel, 1);
-            labelDrawn = false;
-        }
+    }
+    
+    if ( collision && !labelDrawn ) {
+        //addChild(collideLabel);
+        labelDrawn = true;
+    }
+    else if ( !collision && labelDrawn ) {
+        // removeChild(collideLabel, 1);
+        labelDrawn = false;
+    }
 }
 
 void Project5::menuCloseCallback(Ref* pSender) {

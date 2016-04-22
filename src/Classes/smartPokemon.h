@@ -15,9 +15,14 @@ class SmartPokemon : public PokemonSprite {
 public:
     SmartPokemon(const std::string& name, int noFrames, cocos2d::Point pos, const MySprite* e);
     void update(float);
+    //virtual void setVelocity(cocos2d::Vec2 velocity);
+
 private:
     const MySprite *enemy;
     bool evade;
     float maxDist;
+
+protected:
+    //cocos2d::Vec2 velocity;
 };
 
