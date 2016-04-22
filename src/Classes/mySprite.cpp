@@ -61,6 +61,33 @@ void MySprite::setVelocity(cocos2d::Vec2 vel) {
     velocity = vel;
 }
 
+bool MySprite::collidedRect(const MySprite* otherSprite) const {
+    int myWidth = sprite->getContentSize().width;
+    int myHeight = sprite->getContentSize().height;
+    int oWidth = otherSprite->getSprite()->getContentSize().width;
+    int oHeight = otherSprite->getSprite()->getContentSize().height;
+    
+    cocos2d::Point myPos = sprite->getPosition();
+    cocos2d::Point oPos  = otherSprite->getSprite()->getPosition();
+    
+    if ( myPos.x+myWidth/2 < oPos.x-oWidth/2 ) return false;
+    if ( myPos.x-myWidth/2 > oPos.x+oWidth/2 ) return false;
+    if ( myPos.y-myHeight/2 > oPos.y+oHeight/2 ) return false;
+    if ( myPos.y+myHeight/2 < oPos.y-oHeight/2 ) return false;
+    return true;
+}
+
+bool MySprite::collidedWith(const MySprite* otherSprite) const {
+    cocos2d::Point myPos = sprite->getPosition();
+    cocos2d::Point oPos  = otherSprite->getSprite()->getPosition();
+    float x = myPos.x-oPos.x, y = myPos.y-oPos.y;
+    float distance = hypot(x, y);
+    float radii = otherSprite->getSprite()->getContentSize().width/2 +
+    sprite->getContentSize().width/2;
+    return distance < radii;
+}
+
+
 // Function getFrames marshals the sprite frames into a cocos
 // vector using the format string passed to the function.
 cocos2d::Vector<cocos2d::SpriteFrame*>

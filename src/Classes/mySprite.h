@@ -14,6 +14,9 @@ public:
   virtual cocos2d::Sprite* getSprite() const { return sprite; }
   cocos2d::Vec2 getVelocity() const { return velocity; }
     void setVelocity(cocos2d::Vec2 velocity);
+    bool collidedWith(const MySprite*) const;
+    bool collidedRect(const MySprite*) const;
+
 
 private:
   int spriteWidth;
